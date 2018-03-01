@@ -59,8 +59,8 @@ export default {
     justify-content: center;
     align-items: center;
     margin: 48px auto;
-    animation: colorChanged 1s ease;
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, .25));
+    transition: border .25s;
   }
   .speed, .unit {
     display: block;
@@ -87,12 +87,18 @@ export default {
     }
   }
   .green {
+    animation: colorChanged 1s ease;
     border: 4px solid #4CAF50;
+    transition: border .25s;
   }
   .yellow {
+    animation: colorChanged 1s ease;
     border: 4px solid #FFEB3B;
+    transition: border .25s;
   }
   .red {
+    animation: colorChanged 1s ease;
     border: 4px solid #F44336;
+    transition: border .25s;
   }
 </style>
