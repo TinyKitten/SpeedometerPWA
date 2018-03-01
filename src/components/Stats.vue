@@ -9,13 +9,19 @@
           <span class="unit">km/h</span>
       </span>
     </div>
+    <div @click="setMaxSpeed(0)" class="resetbtn">RESET</div>
   </section>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 
 export default {
+  methods: {
+    ...mapMutations([
+      'setMaxSpeed',
+    ]),
+  },
   computed: {
     ...mapGetters([
       'maxSpeedKmh',
@@ -39,5 +45,15 @@ export default {
     .unit {
         font-size: 1.25rem;
         opacity: .75;
+    }
+    .resetbtn {
+        display: table;
+        margin: 0 auto;
+        padding: 12px;
+        text-align: center;
+        background: #444;
+        border-radius: 4px;
+        margin-top: 24px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, .5);
     }
 </style>
