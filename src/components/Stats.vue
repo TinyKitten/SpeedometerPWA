@@ -49,11 +49,11 @@ export default {
     .resetbtn {
         display: table;
         margin: 0 auto;
-        padding: 12px;
+        padding: 14px;
         text-align: center;
         background: #444;
         border-radius: 4px;
         margin-top: 24px;
-        box-shadow: 0 0 8px rgba(0, 0, 0, .5);
+        box-shadow: 0 0 8px rgba(0, 0, 0, .25);
     }
 </style>
