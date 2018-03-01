@@ -13,13 +13,12 @@ export default {
 
 <style scoped>
     footer {
-        position: absolute;
-        bottom: 32px;
         width: 100%;
         text-align: center;
         font-size: .9rem;
         line-height: 1.25rem;
         opacity: .75;
+        margin-top: 32px;
     }
     a {
         display: block;
