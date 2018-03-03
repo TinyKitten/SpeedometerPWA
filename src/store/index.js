@@ -38,7 +38,7 @@ export default new Vuex.Store({
             commit('setError', error);
           },
           {
-            enableHighAccuracy: true,
+            enableHighAccuracy: false,
             timeout: 1000,
             maximumAge: 0,
           },
