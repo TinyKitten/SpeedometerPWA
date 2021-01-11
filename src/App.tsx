@@ -26,7 +26,7 @@ const App: React.FC = () => {
           setHasError(false);
         },
         () => {
-          setHasError(true);
+          // setHasError(true);
         },
         {
           enableHighAccuracy: true,
@@ -46,7 +46,7 @@ const App: React.FC = () => {
   if (hasError) {
     return (
       <div className={styles.errorContainer}>
-        <h1 className={styles.errorMsg}>何らかのエラーが発生しました。</h1>
+        <h1 className={styles.errorMsg}>位置情報の取得に失敗しました</h1>
       </div>
     );
   }
