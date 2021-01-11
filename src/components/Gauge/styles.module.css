@@ -1,0 +1,33 @@
+.circle {
+  width: 280px;
+  height: 280px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 48px auto;
+}
+.speed,
+.unit {
+  display: block;
+  text-align: center;
+}
+.speed {
+  font-size: 5rem;
+  line-height: 6rem;
+}
+.unit {
+  font-size: 2rem;
+  opacity: 0.75;
+}
+
+.green {
+  border: 4px solid #4caf50;
+}
+.yellow {
+  border: 4px solid #ffeb3b;
+}
+.red {
+  border: 4px solid #f44336;
+}
