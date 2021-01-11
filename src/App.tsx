@@ -9,11 +9,16 @@ const App: React.FC = () => {
   const [maxSpeed, setMaxSpeed] = useState(0);
   const [hasError, setHasError] = useState(false);
 
+  const toKMH = useCallback(
+    (num: number) => Math.round((num * 3600) / 1000),
+    []
+  );
+
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.watchPosition(
         (position) => {
-          const speed = position.coords.speed || 0;
+          const speed = toKMH(position.coords.speed || 0);
           setSpeed(speed);
           if (maxSpeed < speed) {
             setMaxSpeed(speed);
