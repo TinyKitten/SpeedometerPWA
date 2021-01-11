@@ -37,7 +37,7 @@ const App: React.FC = () => {
     } else {
       setHasError(true);
     }
-  }, [maxSpeed]);
+  }, [maxSpeed, toKMH]);
 
   const handleResetClick = useCallback(() => {
     setMaxSpeed(0);
