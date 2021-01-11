@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import './App.css';
 import Credit from './components/Credit';
 import Gauge from './components/Gauge';
 import Stats from './components/Stats';
+import styles from './App.module.css';
 
 const App: React.FC = () => {
   const [speed, setSpeed] = useState(0);
@@ -37,6 +37,14 @@ const App: React.FC = () => {
   const handleResetClick = useCallback(() => {
     setMaxSpeed(0);
   }, []);
+
+  if (hasError) {
+    return (
+      <div className={styles.errorContainer}>
+        <h1 className={styles.errorMsg}>何らかのエラーが発生しました。</h1>
+      </div>
+    );
+  }
 
   return (
     <div>
