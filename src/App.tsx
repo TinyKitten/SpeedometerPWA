@@ -18,10 +18,10 @@ const App: React.FC = () => {
     if (navigator.geolocation) {
       navigator.geolocation.watchPosition(
         (position) => {
-          const speed = position.coords.speed || 0;
-          setSpeed(speed);
-          if (maxSpeed < speed) {
-            setMaxSpeed(speed);
+          const s = position.coords.speed || 0;
+          setSpeed(s);
+          if (maxSpeed < s) {
+            setMaxSpeed(s);
           }
           setHasError(false);
         },
