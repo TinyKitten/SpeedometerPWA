@@ -18,7 +18,7 @@ const App: React.FC = () => {
     if (navigator.geolocation) {
       navigator.geolocation.watchPosition(
         (position) => {
-          const speed = toKMH(position.coords.speed || 0);
+          const speed = position.coords.speed || 0;
           setSpeed(speed);
           if (maxSpeed < speed) {
             setMaxSpeed(speed);
@@ -37,7 +37,7 @@ const App: React.FC = () => {
     } else {
       setHasError(true);
     }
-  }, [maxSpeed, toKMH]);
+  }, [maxSpeed]);
 
   const handleResetClick = useCallback(() => {
     setMaxSpeed(0);
@@ -53,8 +53,8 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Gauge speed={speed} />
-      <Stats onResetClick={handleResetClick} maxSpeed={maxSpeed} />
+      <Gauge speed={toKMH(speed)} />
+      <Stats onResetClick={handleResetClick} maxSpeed={toKMH(maxSpeed)} />
       <Credit />
     </div>
   );
