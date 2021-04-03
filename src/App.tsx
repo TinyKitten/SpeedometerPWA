@@ -1,44 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Credit from './components/Credit';
 import Gauge from './components/Gauge';
 import Stats from './components/Stats';
 import styles from './App.module.css';
+import useSpeed from './hooks/useSpeed';
+import { toKMH } from './utils/kmh';
 
 const App: React.FC = () => {
-  const [speed, setSpeed] = useState(0);
-  const [maxSpeed, setMaxSpeed] = useState(0);
-  const [hasError, setHasError] = useState(false);
+  const { currentSpeed, maxSpeed, hasError, resetMaxSpeed } = useSpeed();
 
-  const toKMH = (num: number) => Math.round((num * 3600) / 1000);
-
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.watchPosition(
-        (position) => {
-          const { speed } = position.coords;
-          if (speed) {
-            setSpeed(speed);
-            if (maxSpeed < speed) {
-              setMaxSpeed(speed);
-            }
-            setHasError(false);
-          }
-        },
-        () => {
-          // setHasError(true);
-        },
-        {
-          enableHighAccuracy: true,
-          timeout: 1000,
-          maximumAge: 0,
-        }
-      );
-    } else {
-      setHasError(true);
-    }
-  }, [maxSpeed]);
-
-  const handleResetClick = () => setMaxSpeed(0);
   if (hasError) {
     return (
       <div className={styles.errorContainer}>
@@ -49,8 +19,8 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Gauge speed={toKMH(speed)} />
-      <Stats onResetClick={handleResetClick} maxSpeed={toKMH(maxSpeed)} />
+      <Gauge speed={toKMH(currentSpeed)} />
+      <Stats onResetClick={resetMaxSpeed} maxSpeed={toKMH(maxSpeed)} />
       <Credit />
     </div>
   );
