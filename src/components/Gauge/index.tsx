@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import styles from './styles.module.css';
 
 type Props = {
@@ -6,7 +6,7 @@ type Props = {
 };
 
 const Gauge: React.FC<Props> = ({ speed }: Props) => {
-  const circleColorClassName = useMemo(() => {
+  const circleColorClassName = (() => {
     if (speed === 0) {
       return styles.circle;
     } else if (speed < 30) {
@@ -15,7 +15,7 @@ const Gauge: React.FC<Props> = ({ speed }: Props) => {
       return [styles.circle, styles.yellow].join(' ');
     }
     return [styles.circle, styles.red].join(' ');
-  }, [speed]);
+  })();
 
   return (
     <div className={styles.gauge}>

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Credit from './components/Credit';
 import Gauge from './components/Gauge';
 import Stats from './components/Stats';
@@ -9,21 +9,20 @@ const App: React.FC = () => {
   const [maxSpeed, setMaxSpeed] = useState(0);
   const [hasError, setHasError] = useState(false);
 
-  const toKMH = useCallback(
-    (num: number) => Math.round((num * 3600) / 1000),
-    []
-  );
+  const toKMH = (num: number) => Math.round((num * 3600) / 1000);
 
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.watchPosition(
         (position) => {
-          const s = position.coords.speed || 0;
-          setSpeed(s);
-          if (maxSpeed < s) {
-            setMaxSpeed(s);
+          const { speed } = position.coords;
+          if (speed) {
+            setSpeed(speed);
+            if (maxSpeed < speed) {
+              setMaxSpeed(speed);
+            }
+            setHasError(false);
           }
-          setHasError(false);
         },
         () => {
           // setHasError(true);
@@ -39,10 +38,7 @@ const App: React.FC = () => {
     }
   }, [maxSpeed]);
 
-  const handleResetClick = useCallback(() => {
-    setMaxSpeed(0);
-  }, []);
-
+  const handleResetClick = () => setMaxSpeed(0);
   if (hasError) {
     return (
       <div className={styles.errorContainer}>
