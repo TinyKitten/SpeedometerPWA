@@ -78,13 +78,13 @@ const Gauge: React.FC<Props> = ({ speed }: Props) => {
           style={{ filter: 'drop-shadow(0 0 8px rgba(0, 0, 0, 0.16))' }}
           d="M 256.0845275746526 256.04750355035594 A 140 140 0 1 0 43.93398282201785 256.06601717798213"
           fill="#252525"
-          strokeWidth="8"
+          strokeWidth="6"
         />
         <path
           d="M 234.86762205972212 234.8380028402848 A 120 120 0 1 0 65.14718625761428 234.8528137423857"
           fill="none"
           stroke="#fff"
-          strokeWidth="8"
+          strokeWidth="6"
         />
         <path d={redPathD} fill="none" stroke="#E94560" strokeWidth="8" />
 
