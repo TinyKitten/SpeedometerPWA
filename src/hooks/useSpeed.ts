@@ -3,12 +3,14 @@ import { useEffect, useState } from 'react';
 type SpeedMap = {
   currentSpeed: number;
   maxSpeed: number;
+  avgSpeed: number;
   hasError: boolean;
   resetMaxSpeed: () => void;
 };
 
 const useSpeed = (): SpeedMap => {
   const [currentSpeed, setCurrentSpeed] = useState(0);
+  const [avgSpeed, setAvgSpeed] = useState(0);
   const [maxSpeed, setMaxSpeed] = useState(0);
   const [hasError, setHasError] = useState(false);
 
@@ -44,6 +46,7 @@ const useSpeed = (): SpeedMap => {
 
   return {
     currentSpeed,
+    avgSpeed,
     maxSpeed,
     hasError,
     resetMaxSpeed,

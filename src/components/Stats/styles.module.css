@@ -3,34 +3,40 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+}
+.panels {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.panel {
+  background-color: #393e46;
+  padding: 24px;
+  border-radius: 8px;
+  /* width: 50%; */
+  width: 100%;
+  margin: 0 16px;
+  text-align: center;
 }
 .title {
   font-weight: bold;
-  line-height: 3rem;
+  margin-bottom: 8px;
 }
-.panel {
-  text-align: center;
-}
-.speedContainer {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+.icon {
+  width: auto;
+  height: 24px;
+  margin-bottom: 16px;
 }
 .speed {
-  font-size: 2rem;
-  text-align: center;
-  margin-right: 8px;
-}
-.unit {
-  font-size: 1.25rem;
-  opacity: 0.75;
-  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 .resetbtn {
   margin: 0 auto;
   padding: 14px;
   text-align: center;
-  background: #444;
+  background-color: #393e46;
   border-radius: 4px;
   margin-top: 24px;
   appearance: none;

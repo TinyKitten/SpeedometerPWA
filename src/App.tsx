@@ -53,7 +53,11 @@ const App: React.FC = () => {
       />
 
       <Gauge speed={toKMH(currentSpeed)} />
-      <Stats onResetClick={resetMaxSpeed} maxSpeed={toKMH(maxSpeed)} />
+      <Stats
+        onResetClick={resetMaxSpeed}
+        // avgSpeed={toKMH(avgSpeed)}
+        maxSpeed={toKMH(maxSpeed)}
+      />
       <Credit />
     </div>
   );
