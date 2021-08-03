@@ -86,7 +86,13 @@ const Gauge: React.FC<Props> = ({ speed }: Props) => {
           stroke="#fff"
           strokeWidth="6"
         />
-        <path d={redPathD} fill="none" stroke="#E94560" strokeWidth="8" />
+        <path
+          style={{ transition: 'd 0.5s ease' }}
+          d={redPathD}
+          fill="none"
+          stroke="#E94560"
+          strokeWidth="8"
+        />
 
         <text
           x="50%"
