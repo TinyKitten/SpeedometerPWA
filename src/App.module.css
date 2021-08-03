@@ -10,3 +10,11 @@
   font-size: 2rem;
   line-height: 2;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 64px;
+}

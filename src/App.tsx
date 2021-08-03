@@ -39,7 +39,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <div>
+    <div className={styles.container}>
       <Snackbar
         open={showReload}
         message="新しいバージョンがリリースされました🚀"
