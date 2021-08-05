@@ -64,11 +64,7 @@ const Gauge: React.FC<Props> = ({ speed }: Props) => {
       setRedPathD(arc(150, 150, 120, -135, 135));
       return;
     }
-    if (speed >= 67.5) {
-      setRedPathD(arc(150, 150, 120, -135, speed - 67.5));
-    } else {
-      setRedPathD(arc(150, 150, 120, -135, speed - 135));
-    }
+    setRedPathD(arc(150, 150, 120, -135, speed - 135));
   }, [arc, speed]);
 
   return (
